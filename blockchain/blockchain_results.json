@@ -1,0 +1,118 @@
+{
+  "avalanche": {
+    "m1": "Transfer 10 BTC to Alice",
+    "m2": "Transfer 10 BTC to Alicf",
+    "h1": "9fede7bf358f267f1410823097adff4eeb255ede9f615f78ae8beb63d8713b7e",
+    "h2": "d790671b7be8bddbede5c52c2c0829827ff8eef86ef1151955ec451177c5a371",
+    "bits_flipped": 133,
+    "avg_bits_flipped_256_trials": 128.3984375
+  },
+  "chain": [
+    {
+      "block": 0,
+      "txs": 1,
+      "nonce": 69709,
+      "tries": 69710,
+      "seconds": 0.367,
+      "merkle_root": "05c43bd259ba7b7ea34c8ff580a9022323441f0832c7eebc72c777ca550570d6",
+      "hash": "000091f30dc12bf3b15f752c02298281a4d3f3b2b13c5218722b3fc20ea8aba2",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "block": 1,
+      "txs": 3,
+      "nonce": 27830,
+      "tries": 27831,
+      "seconds": 0.37,
+      "merkle_root": "de1e72f04835ebbe1cee2a840919575c64cd5be9541258f182e3966cb04015c8",
+      "hash": "000029dcb91bfd3a57c788dd5e4f79c317f6087ada6113aaa1d27e52fd8f5c52",
+      "prev_hash": "000091f30dc12bf3b15f752c02298281a4d3f3b2b13c5218722b3fc20ea8aba2"
+    },
+    {
+      "block": 2,
+      "txs": 2,
+      "nonce": 204190,
+      "tries": 204191,
+      "seconds": 1.788,
+      "merkle_root": "14545456b4977e15e334fe094fb07ca7cf334b77dfe1afba9fc6779fd60a731c",
+      "hash": "00000cc5c98b9e97fe71611e1d4f0b5a29c020453e846d0016188127f43df846",
+      "prev_hash": "000029dcb91bfd3a57c788dd5e4f79c317f6087ada6113aaa1d27e52fd8f5c52"
+    },
+    {
+      "block": 3,
+      "txs": 1,
+      "nonce": 13747,
+      "tries": 13748,
+      "seconds": 0.06,
+      "merkle_root": "e7a5d521c8e219f566e1fe411fa9c48472401524c1b79c436dff6768249e585e",
+      "hash": "0000aa6d92711a02a406ad544dc991c99578a6217b302b98ee7335f54de4c452",
+      "prev_hash": "00000cc5c98b9e97fe71611e1d4f0b5a29c020453e846d0016188127f43df846"
+    }
+  ],
+  "pow": [
+    {
+      "difficulty_hex_zeros": 1,
+      "expected_tries": 16,
+      "avg_tries": 16.0,
+      "avg_seconds": 0.00012472900000375374
+    },
+    {
+      "difficulty_hex_zeros": 2,
+      "expected_tries": 256,
+      "avg_tries": 135.2,
+      "avg_seconds": 0.0006395966000127373
+    },
+    {
+      "difficulty_hex_zeros": 3,
+      "expected_tries": 4096,
+      "avg_tries": 3733.0,
+      "avg_seconds": 0.016270770800019818
+    },
+    {
+      "difficulty_hex_zeros": 4,
+      "expected_tries": 65536,
+      "avg_tries": 62722.0,
+      "avg_seconds": 0.27714209659998235
+    },
+    {
+      "difficulty_hex_zeros": 5,
+      "expected_tries": 1048576,
+      "avg_tries": 775071.6,
+      "avg_seconds": 3.446326031999979
+    }
+  ],
+  "tamper": {
+    "original_amount": 1.5,
+    "new_amount": 150.0,
+    "root_before": "de1e72f04835ebbe1cee2a840919575c64cd5be9541258f182e3966cb04015c8",
+    "root_after": "d1a8c64b13879adb9e7bae9f899e47d853131f54d639c2afd59a52ee6b5136f4",
+    "problems": [
+      "block 1: stored hash does not match its contents"
+    ]
+  },
+  "merkle_proof": {
+    "n_tx": 8,
+    "proof_len": 3,
+    "valid": true,
+    "root": "4538528dcb0847936deec3c65281cb3111f3bae1482c9d3cc0277fd5f3030f45"
+  },
+  "genesis": {
+    "header_bytes": 80,
+    "header_hex": "0100000000000000000000000000000000000000000000000000000000000000000000003ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a29ab5f49ffff001d1dac2b7c",
+    "computed_hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+    "expected_hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+    "target": "00000000ffff0000000000000000000000000000000000000000000000000000",
+    "hash_below_target": true,
+    "leading_zero_bits": 43,
+    "nonce": 2083236893,
+    "time_utc": "2009-01-03 18:15:05"
+  },
+  "genesis_address": {
+    "available": true,
+    "pubkey_bytes": 65,
+    "sha256": "261c1eb21fc4708c6acbe1cfc6d4565652e9e768b620782898936b93000a6c02",
+    "hash160": "62e907b15cbf27d5425399ebf6f0fb50ebb88f18",
+    "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+    "expected": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+  }
+}

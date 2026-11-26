@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_lock"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".InboxActivity"
+            android:exported="false"
+            android:label="Inbox"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.Bar" />
+
+        <activity
+            android:name=".BenchmarkActivity"
+            android:exported="false"
+            android:label="RSA vs ECC benchmark"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.Bar" />
+
+        <!-- Receives every incoming SMS; only messages in our format (K1:/R1:/E1:) are processed. -->
+        <receiver
+            android:name=".SmsReceiver"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

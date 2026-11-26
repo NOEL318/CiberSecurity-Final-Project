@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- ============ Header ============ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/circle_white"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_lock_white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Secure SMS"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End-to-end SMS encryption · RSA &amp; ECC"
+                        android:textColor="@color/white_80"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvChipKeys"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_header"
+                    android:text="● No keys yet"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvChipInbox"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_header"
+                    android:text="✉ 0"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============ 1. Key pairs ============ -->
+        <LinearLayout style="@style/Card" android:layout_marginTop="18dp">
+
+            <LinearLayout style="@style/CardHeader">
+                <TextView style="@style/StepBadge" android:text="1" />
+                <TextView style="@style/CardTitle" android:text="My key pairs" />
+                <ProgressBar
+                    android:id="@+id/pbKeys"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:indeterminateTint="@color/primary"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/Label" android:text="RSA modulus (bits)" />
+
+                    <Spinner
+                        android:id="@+id/spRsaBits"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="32dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/Label" android:text="ECC curve (NIST)" />
+
+                    <Spinner
+                        android:id="@+id/spCurve"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_spinner"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="32dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGenerate"
+                style="@style/BtnPrimary"
+                android:layout_marginTop="14dp"
+                android:drawableStart="@drawable/ic_key"
+                android:text="Generate RSA + ECC key pairs" />
+
+            <TextView
+                android:id="@+id/tvMyKeys"
+                style="@style/Mono"
+                android:layout_marginTop="12dp"
+                android:text="No keys yet. Choose the sizes and press Generate." />
+        </LinearLayout>
+
+        <!-- ============ 2. Contact ============ -->
+        <LinearLayout style="@style/Card">
+
+            <LinearLayout style="@style/CardHeader">
+                <TextView style="@style/StepBadge" android:text="2" />
+                <TextView style="@style/CardTitle" android:text="Contact and key exchange" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/Input"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/text3"
+                android:hint="Contact number (emulator: 5554 / 5556)"
+                android:inputType="phone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvChipRsa"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_muted"
+                    android:text="RSA key —"
+                    android:textColor="@color/text2" />
+
+                <TextView
+                    android:id="@+id/tvChipEcc"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_muted"
+                    android:text="ECC key —"
+                    android:textColor="@color/text2" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvContact"
+                style="@style/Hint"
+                android:layout_marginTop="8dp"
+                android:text="Enter a phone number to see its public keys." />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSendKeys"
+                    style="@style/BtnPrimary"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_send"
+                    android:text="Send keys" />
+
+                <Button
+                    android:id="@+id/btnPasteKey"
+                    style="@style/BtnSecondary"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_paste"
+                    android:text="Paste key" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============ 3. Compose ============ -->
+        <LinearLayout style="@style/Card">
+
+            <LinearLayout style="@style/CardHeader">
+                <TextView style="@style/StepBadge" android:text="3" />
+                <TextView style="@style/CardTitle" android:text="Write and encrypt" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgAlgo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_segment"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <RadioButton
+                    android:id="@+id/rbRsa"
+                    style="@style/Segment"
+                    android:checked="true"
+                    android:text="RSA-OAEP" />
+
+                <RadioButton
+                    android:id="@+id/rbEcc"
+                    style="@style/Segment"
+                    android:text="ECC · ECIES" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvAlgoHint"
+                style="@style/Hint"
+                android:layout_marginTop="6dp"
+                android:text="RSA with OAEP padding, message split into fixed-size blocks." />
+
+            <EditText
+                android:id="@+id/etMessage"
+                style="@style/Input"
+                android:layout_marginTop="12dp"
+                android:gravity="top|start"
+                android:hint="Type your message…"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvEstimate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvCounter"
+                    android:maxLines="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 ch"
+                    android:textColor="@color/text3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnPreview"
+                    style="@style/BtnSecondary"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_eye"
+                    android:text="Preview" />
+
+                <Button
+                    android:id="@+id/btnSend"
+                    style="@style/BtnPrimary"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1.4"
+                    android:drawableStart="@drawable/ic_send"
+                    android:text="Encrypt &amp; send" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============ Ciphertext result (shown after preview/send) ============ -->
+        <LinearLayout
+            android:id="@+id/cardCipher"
+            style="@style/Card"
+            android:visibility="gone">
+
+            <LinearLayout style="@style/CardHeader">
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/circle_primary"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_lock_white" />
+                <TextView style="@style/CardTitle" android:text="Ciphertext (what the network sees)" />
+                <ImageButton
+                    android:id="@+id/btnCopy"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/btn_icon"
+                    android:contentDescription="Copy"
+                    android:padding="9dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_copy"
+                    android:tint="@color/primary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCipherAlgo"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_rsa"
+                    android:textColor="@color/rsa" />
+
+                <TextView
+                    android:id="@+id/tvCipherSize"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_muted"
+                    android:textColor="@color/text2" />
+
+                <TextView
+                    android:id="@+id/tvCipherTime"
+                    style="@style/Chip"
+                    android:background="@drawable/chip_muted"
+                    android:textColor="@color/text2" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCipherInfo"
+                style="@style/Hint"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvCipher"
+                style="@style/Mono"
+                android:layout_marginTop="8dp"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- ============ Receiver tools ============ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="RECEIVER TOOLS"
+            android:textColor="@color/text2"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/tileInbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tile"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle_rsa"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_inbox"
+                    android:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Inbox"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvInboxCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Decrypt received SMS"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tileBench"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tile"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle_ecc"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_chart"
+                    android:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="RSA vs ECC"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Benchmark at receiver"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="LIS4062 Information Security · UDLAP · Autumn 2026"
+            android:textColor="@color/text3"
+            android:textSize="11sp" />
+    </LinearLayout>
+</ScrollView>

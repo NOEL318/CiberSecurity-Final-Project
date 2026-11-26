@@ -1,0 +1,627 @@
+{
+ "file": "/home/claude/pcap/captura_tls.pcapng",
+ "total_frames": 793,
+ "tls_connections": 2,
+ "connections": [
+  {
+   "client_port": 41162,
+   "sni": "www.amazon.com.mx",
+   "version": "TLS 1.3",
+   "first_frame": 13
+  },
+  {
+   "client_port": 44404,
+   "sni": "www.amazon.com.mx",
+   "version": "TLS 1.2",
+   "first_frame": 412
+  }
+ ],
+ "client": "172.19.164.149:44404",
+ "server": "18.160.131.218:443",
+ "client_hello": {
+  "legacy_version": "TLS 1.2",
+  "random": "5b1ff26c7af06a840712e6f88638576718aac9e4bd56bef9b73b12923f845187",
+  "session_id_length": 0,
+  "session_id": "",
+  "cipher_suites": [
+   "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+   "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+   "Unknown 0x00a3",
+   "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384",
+   "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+   "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+   "Unknown 0xccaa",
+   "Unknown 0xc0ad",
+   "Unknown 0xc09f",
+   "Unknown 0xc05d",
+   "Unknown 0xc061",
+   "Unknown 0xc057",
+   "Unknown 0xc053",
+   "Unknown 0x00a7",
+   "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+   "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+   "Unknown 0x00a2",
+   "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+   "Unknown 0xc0ac",
+   "Unknown 0xc09e",
+   "Unknown 0xc05c",
+   "Unknown 0xc060",
+   "Unknown 0xc056",
+   "Unknown 0xc052",
+   "Unknown 0x00a6",
+   "Unknown 0xc0af",
+   "Unknown 0xc0ae",
+   "Unknown 0xc0a3",
+   "Unknown 0xc0a2",
+   "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+   "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+   "Unknown 0x006b",
+   "Unknown 0x006a",
+   "Unknown 0xc073",
+   "Unknown 0xc077",
+   "Unknown 0x00c4",
+   "Unknown 0x00c3",
+   "Unknown 0x006d",
+   "Unknown 0x00c5",
+   "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+   "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+   "Unknown 0x0067",
+   "Unknown 0x0040",
+   "Unknown 0xc072",
+   "Unknown 0xc076",
+   "Unknown 0x00be",
+   "Unknown 0x00bd",
+   "Unknown 0x006c",
+   "Unknown 0x00bf",
+   "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+   "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+   "Unknown 0x0039",
+   "Unknown 0x0038",
+   "Unknown 0x0088",
+   "Unknown 0x0087",
+   "Unknown 0xc019",
+   "Unknown 0x003a",
+   "Unknown 0x0089",
+   "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+   "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+   "Unknown 0x0033",
+   "Unknown 0x0032",
+   "Unknown 0x009a",
+   "Unknown 0x0099",
+   "Unknown 0x0045",
+   "Unknown 0x0044",
+   "Unknown 0xc018",
+   "Unknown 0x0034",
+   "Unknown 0x009b",
+   "Unknown 0x0046",
+   "TLS_RSA_WITH_AES_256_GCM_SHA384",
+   "Unknown 0xc09d",
+   "Unknown 0xc051",
+   "TLS_RSA_WITH_AES_128_GCM_SHA256",
+   "Unknown 0xc09c",
+   "Unknown 0xc050",
+   "Unknown 0xc0a1",
+   "Unknown 0xc0a0",
+   "TLS_RSA_WITH_AES_256_CBC_SHA256",
+   "Unknown 0x00c0",
+   "TLS_RSA_WITH_AES_128_CBC_SHA256",
+   "Unknown 0x00ba",
+   "TLS_RSA_WITH_AES_256_CBC_SHA",
+   "Unknown 0x0084",
+   "TLS_RSA_WITH_AES_128_CBC_SHA",
+   "Unknown 0x0096",
+   "Unknown 0x0041"
+  ],
+  "cipher_suite_count": 87,
+  "extensions": [
+   "renegotiation_info",
+   "server_name",
+   "ec_point_formats",
+   "supported_groups",
+   "application_layer_protocol_negotiation",
+   "unknown(22)",
+   "extended_master_secret",
+   "signature_algorithms",
+   "padding"
+  ],
+  "sni": "www.amazon.com.mx",
+  "supported_groups": [
+   "x25519",
+   "secp256r1",
+   "x448",
+   "secp384r1",
+   "secp521r1"
+  ],
+  "alpn": [
+   "h2",
+   "http/1.1"
+  ]
+ },
+ "server_hello": {
+  "legacy_version": "TLS 1.2",
+  "random": "f0cb00a507024114857ab1b3a3c40eb168f4b96eb7810409444f574e47524401",
+  "session_id_length": 32,
+  "session_id": "a1355a2ae3773a5533e362de13e6fd53b465b71fa090a2988aa21310f8908116",
+  "cipher_suite": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+  "extensions": [
+   "server_name",
+   "ec_point_formats",
+   "renegotiation_info",
+   "application_layer_protocol_negotiation",
+   "extended_master_secret"
+  ],
+  "negotiated_version": "TLS 1.2",
+  "alpn": "h2",
+  "downgrade_sentinel": true
+ },
+ "tls13": false,
+ "first_8_frames": [
+  {
+   "frame": 412,
+   "source": "client",
+   "records": [
+    "Handshake: Client Hello"
+   ],
+   "n_records": 1,
+   "t_ms": 0.0,
+   "frame_len": 583
+  },
+  {
+   "frame": 414,
+   "source": "server",
+   "records": [
+    "Handshake: Server Hello",
+    "Handshake: Certificate",
+    "Handshake: Server Key Exchange"
+   ],
+   "n_records": 3,
+   "t_ms": 14.462,
+   "frame_len": 4350
+  },
+  {
+   "frame": 415,
+   "source": "server",
+   "records": [
+    "Handshake: Server Hello Done"
+   ],
+   "n_records": 1,
+   "t_ms": 14.462,
+   "frame_len": 215
+  },
+  {
+   "frame": 418,
+   "source": "client",
+   "records": [
+    "Handshake: Client Key Exchange",
+    "Change Cipher Spec",
+    "Handshake (Encrypted Handshake Message)"
+   ],
+   "n_records": 3,
+   "t_ms": 21.302,
+   "frame_len": 159
+  },
+  {
+   "frame": 420,
+   "source": "server",
+   "records": [
+    "Change Cipher Spec",
+    "Handshake (Encrypted Handshake Message)"
+   ],
+   "n_records": 2,
+   "t_ms": 37.662,
+   "frame_len": 117
+  },
+  {
+   "frame": 421,
+   "source": "server",
+   "records": [
+    "Application Data"
+   ],
+   "n_records": 1,
+   "t_ms": 37.663,
+   "frame_len": 135
+  },
+  {
+   "frame": 423,
+   "source": "client",
+   "records": [
+    "Application Data"
+   ],
+   "n_records": 1,
+   "t_ms": 40.574,
+   "frame_len": 201
+  },
+  {
+   "frame": 424,
+   "source": "client",
+   "records": [
+    "Application Data"
+   ],
+   "n_records": 1,
+   "t_ms": 41.145,
+   "frame_len": 130
+  }
+ ],
+ "records": [
+  {
+   "frame": 412,
+   "end_frame": 412,
+   "dir": "C",
+   "content_type": 22,
+   "type": "Handshake: Client Hello",
+   "version": "TLS 1.0",
+   "length": 512
+  },
+  {
+   "frame": 414,
+   "end_frame": 414,
+   "dir": "S",
+   "content_type": 22,
+   "type": "Handshake: Server Hello",
+   "version": "TLS 1.2",
+   "length": 104
+  },
+  {
+   "frame": 414,
+   "end_frame": 414,
+   "dir": "S",
+   "content_type": 22,
+   "type": "Handshake: Certificate",
+   "version": "TLS 1.2",
+   "length": 4005,
+   "certificate_bytes": 4001,
+   "certificates": [
+    {
+     "bytes": 1693,
+     "subject_cn_last": "www.amazon.com.mx"
+    },
+    {
+     "bytes": 1122,
+     "subject_cn_last": "Amazon RSA 2048 M01"
+    },
+    {
+     "bytes": 1174,
+     "subject_cn_last": "Amazon Root CA 1"
+    }
+   ]
+  },
+  {
+   "frame": 414,
+   "end_frame": 415,
+   "dir": "S",
+   "content_type": 22,
+   "type": "Handshake: Server Key Exchange",
+   "version": "TLS 1.2",
+   "length": 300,
+   "server_key_exchange": {
+    "curve": "x25519",
+    "public_key_bytes": 32
+   }
+  },
+  {
+   "frame": 415,
+   "end_frame": 415,
+   "dir": "S",
+   "content_type": 22,
+   "type": "Handshake: Server Hello Done",
+   "version": "TLS 1.2",
+   "length": 4
+  },
+  {
+   "frame": 418,
+   "end_frame": 418,
+   "dir": "C",
+   "content_type": 22,
+   "type": "Handshake: Client Key Exchange",
+   "version": "TLS 1.2",
+   "length": 37,
+   "client_key_exchange_bytes": 33
+  },
+  {
+   "frame": 418,
+   "end_frame": 418,
+   "dir": "C",
+   "content_type": 20,
+   "type": "Change Cipher Spec",
+   "version": "TLS 1.2",
+   "length": 1
+  },
+  {
+   "frame": 418,
+   "end_frame": 418,
+   "dir": "C",
+   "content_type": 22,
+   "type": "Handshake (Encrypted Handshake Message)",
+   "version": "TLS 1.2",
+   "length": 40
+  },
+  {
+   "frame": 420,
+   "end_frame": 420,
+   "dir": "S",
+   "content_type": 20,
+   "type": "Change Cipher Spec",
+   "version": "TLS 1.2",
+   "length": 1
+  },
+  {
+   "frame": 420,
+   "end_frame": 420,
+   "dir": "S",
+   "content_type": 22,
+   "type": "Handshake (Encrypted Handshake Message)",
+   "version": "TLS 1.2",
+   "length": 40
+  },
+  {
+   "frame": 421,
+   "end_frame": 421,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 64
+  },
+  {
+   "frame": 423,
+   "end_frame": 423,
+   "dir": "C",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 130
+  },
+  {
+   "frame": 424,
+   "end_frame": 424,
+   "dir": "C",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 59
+  },
+  {
+   "frame": 426,
+   "end_frame": 426,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 33
+  },
+  {
+   "frame": 428,
+   "end_frame": 429,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 2998
+  },
+  {
+   "frame": 430,
+   "end_frame": 431,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 11626
+  },
+  {
+   "frame": 432,
+   "end_frame": 440,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 11611
+  },
+  {
+   "frame": 440,
+   "end_frame": 440,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 1420
+  },
+  {
+   "frame": 440,
+   "end_frame": 440,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 6423
+  },
+  {
+   "frame": 440,
+   "end_frame": 442,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 6429
+  },
+  {
+   "frame": 442,
+   "end_frame": 442,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 3228
+  },
+  {
+   "frame": 442,
+   "end_frame": 442,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 4377
+  },
+  {
+   "frame": 442,
+   "end_frame": 442,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 7260
+  },
+  {
+   "frame": 442,
+   "end_frame": 443,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 11213
+  },
+  {
+   "frame": 443,
+   "end_frame": 443,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 14927
+  },
+  {
+   "frame": 443,
+   "end_frame": 444,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 3225
+  },
+  {
+   "frame": 444,
+   "end_frame": 444,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 8421
+  },
+  {
+   "frame": 444,
+   "end_frame": 444,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 4377
+  },
+  {
+   "frame": 444,
+   "end_frame": 448,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 5241
+  },
+  {
+   "frame": 448,
+   "end_frame": 448,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 9306
+  },
+  {
+   "frame": 448,
+   "end_frame": 452,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 12820
+  },
+  {
+   "frame": 452,
+   "end_frame": 452,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 7514
+  },
+  {
+   "frame": 452,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 11713
+  },
+  {
+   "frame": 454,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 1378
+  },
+  {
+   "frame": 454,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 483
+  },
+  {
+   "frame": 454,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 1031
+  },
+  {
+   "frame": 454,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 2929
+  },
+  {
+   "frame": 454,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 2929
+  },
+  {
+   "frame": 454,
+   "end_frame": 454,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 2929
+  },
+  {
+   "frame": 454,
+   "end_frame": 456,
+   "dir": "S",
+   "content_type": 23,
+   "type": "Application Data",
+   "version": "TLS 1.2",
+   "length": 5817
+  }
+ ]
+}

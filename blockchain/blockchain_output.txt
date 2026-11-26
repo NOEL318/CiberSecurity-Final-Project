@@ -1,0 +1,60 @@
+------------------------------------------------------------------------------
+1) SHA-256 properties
+------------------------------------------------------------------------------
+SHA-256('Transfer 10 BTC to Alice') = 9fede7bf358f267f1410823097adff4eeb255ede9f615f78ae8beb63d8713b7e
+SHA-256('Transfer 10 BTC to Alicf') = d790671b7be8bddbede5c52c2c0829827ff8eef86ef1151955ec451177c5a371
+One character changed -> 133/256 output bits flipped (52.0%)
+1 MB input still gives a 256-bit digest: 1b977e9f84f1b26b6ed7f68b0498faee...
+Average over 256 single-bit input changes: 128.4 bits flipped (ideal 128)
+
+------------------------------------------------------------------------------
+2) Mining a small blockchain (Proof-of-Work, difficulty = 4 hex zeros)
+------------------------------------------------------------------------------
+Block 0: 1 tx  nonce=  69709  hash=000091f30dc12bf3b15f752c02298281a4d3f3b2b13c5218722b3fc20ea8aba2
+         prev=0000000000000000000000000000000000000000000000000000000000000000
+Block 1: 3 tx  nonce=  27830  hash=000029dcb91bfd3a57c788dd5e4f79c317f6087ada6113aaa1d27e52fd8f5c52
+         prev=000091f30dc12bf3b15f752c02298281a4d3f3b2b13c5218722b3fc20ea8aba2
+Block 2: 2 tx  nonce= 204190  hash=00000cc5c98b9e97fe71611e1d4f0b5a29c020453e846d0016188127f43df846
+         prev=000029dcb91bfd3a57c788dd5e4f79c317f6087ada6113aaa1d27e52fd8f5c52
+Block 3: 1 tx  nonce=  13747  hash=0000aa6d92711a02a406ad544dc991c99578a6217b302b98ee7335f54de4c452
+         prev=00000cc5c98b9e97fe71611e1d4f0b5a29c020453e846d0016188127f43df846
+Chain valid: True
+
+------------------------------------------------------------------------------
+3) Cost of Proof-of-Work vs difficulty (same block, 5 trials each)
+------------------------------------------------------------------------------
+difficulty 1 ( 4 zero bits): expected 16^1 =       16 tries, measured avg         16 tries,    0.000 s
+difficulty 2 ( 8 zero bits): expected 16^2 =      256 tries, measured avg        135 tries,    0.001 s
+difficulty 3 (12 zero bits): expected 16^3 =    4,096 tries, measured avg      3,733 tries,    0.016 s
+difficulty 4 (16 zero bits): expected 16^4 =   65,536 tries, measured avg     62,722 tries,    0.277 s
+difficulty 5 (20 zero bits): expected 16^5 = 1,048,576 tries, measured avg    775,072 tries,    3.446 s
+
+------------------------------------------------------------------------------
+4) Tamper detection
+------------------------------------------------------------------------------
+Changed block 1, tx 0 amount 1.5 -> 150.0
+Merkle root  before: de1e72f04835ebbe1cee2a840919575c64cd5be9541258f182e3966cb04015c8
+Merkle root  after : d1a8c64b13879adb9e7bae9f899e47d853131f54d639c2afd59a52ee6b5136f4
+Block 1 hash after : 68fb745f2807ba5cfb08085db3dc5711490e793125d7c504416a1a3e8c3bc709  (stored 000029dcb91bfd3a57c788dd5e4f79c317f6087ada6113aaa1d27e52fd8f5c52)
+  INVALID -> block 1: stored hash does not match its contents
+To hide the edit the attacker must re-mine blocks 1..3 (~196,608 hashes here) faster than the honest network extends the chain.
+
+------------------------------------------------------------------------------
+5) Merkle proof (simplified payment verification)
+------------------------------------------------------------------------------
+8 transactions, root = 4538528dcb0847936deec3c65281cb3111f3bae1482c9d3cc0277fd5f3030f45
+Proof for tx #5 needs 3 hashes (log2 8 = 3) instead of all 8 -> valid: True
+
+------------------------------------------------------------------------------
+6) REAL Bitcoin: genesis block (block 0)
+------------------------------------------------------------------------------
+80-byte header : 0100000000000000000000000000000000000000000000000000000000000000000000003ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a29ab5f49ffff001d1dac2b7c
+double SHA-256 : 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+published hash : 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+match          : True
+target (bits 0x1d00ffff) = 00000000ffff0000000000000000000000000000000000000000000000000000
+hash < target  : True  (43 leading zero bits, nonce 2,083,236,893, mined 2009-01-03 18:15:05 UTC)
+Genesis public key -> SHA-256 -> RIPEMD-160 = 62e907b15cbf27d5425399ebf6f0fb50ebb88f18
+Base58Check address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa  (expected 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa, match True)
+
+Results saved to blockchain_results.json
